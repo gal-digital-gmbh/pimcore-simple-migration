@@ -27,3 +27,33 @@ Please select namespace
   [2] App\NamespaceX\Migrations
 
 ```
+
+Rollback one migration of namespace
+```console
+php bin/console migrate:prev
+
+Please select namespace
+  [0] App\Migrations
+  [1] App\NamespaceX\Migrations
+
+```
+
+Migrate one migration of namespace
+```console
+php bin/console migrate:next
+
+Please select namespace
+  [0] App\Migrations
+  [1] App\NamespaceX\Migrations
+
+```
+
+Generate new migration class in your selected namespace
+```console
+php bin/console migration:generate
+
+Please select namespace
+  [0] App\Migrations
+  [1] App\NamespaceX\Migrations
+
+```
