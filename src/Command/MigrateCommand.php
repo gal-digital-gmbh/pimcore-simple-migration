@@ -18,7 +18,12 @@ use Symfony\Component\Yaml\Yaml;
 )]
 class MigrateCommand extends Command
 {
-    public function proxyCommand(OutputInterface $output, array $arguments)
+    /**
+     * @param OutputInterface $output
+     * @param string[] $arguments
+     * @return void
+     */
+    public function proxyCommand(OutputInterface $output, array $arguments): void
     {
         $process = new Process(array_merge([
             'php',

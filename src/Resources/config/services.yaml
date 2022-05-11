@@ -3,3 +3,6 @@ services:
     autowire: true
     autoconfigure: true
     public: false
+
+  GalDigitalGmbh\SimpleMigrate\Command\:
+    resource: '../../Command'
