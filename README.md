@@ -4,7 +4,9 @@ Provide helper commands to perform doctrine migrate per namespace
 
 ## Requirements
 
-Pimcore >= 10.1
+* Pimcore >= 10.4
+* config file in your project `PIMCORE_PROJECT_ROOT . '/config/packages/doctrine-migrations.yaml'`
+
 
 ## Installation
 
