@@ -1,0 +1,34 @@
+stages:
+  - test
+
+dependencycheck:
+  tags: [web]
+  stage: test
+  image: git.gal-digital.de:4998/gal-digital/wiki-dependency-report/dependency-check:1.3.0
+  script:
+    - dependency-check --project pimcore-monitoring-bundle --format ALL --data /owasp-data --out ./report --scan . --enableExperimental --failOnCVSS 7
+  after_script:
+    - generate-report --report report/dependency-check-report.json $GENERATE_WIKI_FLAG
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      variables:
+        GENERATE_WIKI_FLAG: ''
+    - if: $CI_COMMIT_REF_NAME == 'develop' || $CI_COMMIT_REF_NAME == 'main'
+      variables:
+        GENERATE_WIKI_FLAG: --wiki --wiki-prefix Security
+
+phpstan:
+  tags: [web]
+  stage: test
+  image:
+    name: ghcr.io/phpstan/phpstan:1
+    entrypoint: ['']
+  before_script:
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts --ignore-platform-reqs
+  script:
+    - /composer/vendor/bin/phpstan analyse --memory-limit=-1 --no-progress --error-format gitlab > gl-phpstan-report.json
+  artifacts:
+    when: always
+    reports:
+      codequality: gl-phpstan-report.json
+    paths: [gl-phpstan-report.json]
