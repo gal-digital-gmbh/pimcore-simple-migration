@@ -1,6 +1,6 @@
 <?php
 
-namespace GalDigitalGmbh\SimpleMigrate\Command;
+namespace GalDigitalGmbh\SimpleMigration\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 

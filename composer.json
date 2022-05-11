@@ -1,5 +1,5 @@
 {
-  "name": "gal-digital-gmbh/pimcore-simple-migrate",
+  "name": "gal-digital-gmbh/pimcore-simple-migration",
   "version": "1.0.0",
   "type": "symfony-bundle",
   "description": "Make pimcore migration simple",
@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "GalDigitalGmbh\\SimpleMigrate\\": "src"
+      "GalDigitalGmbh\\SimpleMigration\\": "src"
     }
   },
   "extra": {

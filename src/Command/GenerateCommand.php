@@ -1,6 +1,6 @@
 <?php
 
-namespace GalDigitalGmbh\SimpleMigrate\Command;
+namespace GalDigitalGmbh\SimpleMigration\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 
@@ -18,6 +18,10 @@ class GenerateCommand extends BaseCommand
         '-n',
     ];
 
+    /**
+     * @param string $namespace
+     * @return string[]
+     */
     protected function createNamespaceArguments(string $namespace): array
     {
         return [

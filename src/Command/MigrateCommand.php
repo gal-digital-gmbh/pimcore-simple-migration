@@ -1,6 +1,6 @@
 <?php
 
-namespace GalDigitalGmbh\SimpleMigrate\Command;
+namespace GalDigitalGmbh\SimpleMigration\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -21,6 +21,9 @@ class MigrateCommand extends BaseCommand
         '-n',
     ];
 
+    /**
+     * @var string[]
+     */
     protected array $additionalNamespaces = [
         self::ALL_NAMESPACES,
     ];

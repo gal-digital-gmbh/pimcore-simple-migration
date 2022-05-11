@@ -1,13 +1,13 @@
 <?php
 
-namespace GalDigitalGmbh\SimpleMigrate\DependencyInjection;
+namespace GalDigitalGmbh\SimpleMigration\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class SimpleMigrateExtension extends Extension
+class SimpleMigrationExtension extends Extension
 {
     /**
      * @param mixed[] $configs

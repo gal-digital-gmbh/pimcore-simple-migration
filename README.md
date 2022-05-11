@@ -13,7 +13,7 @@ Provide helper commands to perform doctrine migrate per namespace
 Require the bundle
 
 ```bash
-composer require gal-digital-gmbh/pimcore-simple-migrate
+composer require gal-digital-gmbh/pimcore-simple-migration
 ```
 
 ## Commands
