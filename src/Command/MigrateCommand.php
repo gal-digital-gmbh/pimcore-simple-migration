@@ -54,7 +54,7 @@ class MigrateCommand extends Command
             PIMCORE_PROJECT_ROOT . '/config/packages/doctrine-migrations.yaml',
             Yaml::PARSE_CONSTANT | Yaml::PARSE_CUSTOM_TAGS,
         );
-        if (!isset($config['doctrine_migrations']) || !isset($config['doctrine_migrations']['migrations_paths'])) {
+        if (!is_array($config['doctrine_migrations']['migrations_paths'] ?? null)) {
             return self::FAILURE;
         }
 
